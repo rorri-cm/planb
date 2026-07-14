@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Plan B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:start;
+  }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; } }
+
+  .form-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:22px;
+    padding:32px;
+  }
+  .field{ margin-bottom:20px; }
+  .field label{
+    display:block; font-size:0.85rem; font-weight:700; color:var(--violet-deep);
+    margin-bottom:8px; font-family:'Unbounded';
+  }
+  .field input, .field select, .field textarea{
+    width:100%; padding:13px 16px; border-radius:12px;
+    border:1.5px solid var(--line); background:var(--cream);
+    font-family:'Inter'; font-size:0.95rem; color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--pink);
+  }
+  .field textarea{ resize:vertical; min-height:120px; }
+  .row-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:480px){ .row-2{ grid-template-columns:1fr; } }
+  .form-note{ font-size:0.82rem; color:rgba(32,19,51,0.5); margin-top:14px; }
+
+  .info-card{
+    background:linear-gradient(135deg, var(--violet), var(--violet-deep));
+    color:#fff; border-radius:22px; padding:32px; margin-bottom:20px;
+  }
+  .info-card h3{ font-family:'Unbounded'; font-size:1.1rem; margin-bottom:20px; }
+  .info-row{ display:flex; gap:14px; align-items:flex-start; margin-bottom:18px; }
+  .info-row:last-child{ margin-bottom:0; }
+  .info-row .ic{
+    width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.12);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1rem;
+  }
+  .info-row strong{ display:block; font-size:0.9rem; margin-bottom:2px; }
+  .info-row span{ font-size:0.85rem; color:rgba(255,255,255,0.72); }
+  .info-row a{ color:#fff; text-decoration:none; }
+
+  .hours-card{
+    background:var(--cream); border:1px solid var(--line); border-radius:22px; padding:28px;
+  }
+  .hours-card h3{ font-family:'Unbounded'; font-size:1rem; color:var(--violet-deep); margin-bottom:16px; }
+  .hours-row{ display:flex; justify-content:space-between; font-size:0.9rem; padding:9px 0; border-top:1px solid var(--line); }
+  .hours-row:first-of-type{ border-top:none; }
+  .hours-row span:first-child{ color:rgba(32,19,51,0.6); }
+  .hours-row span:last-child{ font-weight:600; color:var(--violet-deep); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" style="text-decoration:none;"><div class="logo">Plan B<span class="star">★</span></div></a>
+    <ul class="nav-links">
+      <li><a href="product.html">Producto</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="testimonials.html">Testimonios</a></li>
+      <li><a href="comparison.html">Comparativa</a></li>
+      <li><a href="contact.html" class="active">Contacto</a></li>
+    </ul>
+    <a href="contact.html" class="btn">Pedí el tuyo</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-blob"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Inicio</a> / Contacto</div>
+    <span class="eyebrow">Contacto</span>
+    <h1>Escribinos y coordinamos tu pedido</h1>
+    <p class="lead">Ya sea un estuche para vos o un pedido para todo el salón, contanos y te respondemos lo antes posible.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="form-card">
+        <h3 style="font-family:'Unbounded'; color:var(--violet-deep); font-size:1.1rem; margin-bottom:22px;">Formulario de contacto</h3>
+        <form action="mailto:hola@planb.com" method="post" enctype="text/plain">
+          <div class="row-2">
+            <div class="field">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label for="colegio">Colegio</label>
+              <input type="text" id="colegio" name="colegio" placeholder="Nombre de tu colegio">
+            </div>
+            <div class="field">
+              <label for="motivo">Motivo</label>
+              <select id="motivo" name="motivo">
+                <option>Pedido individual</option>
+                <option>Pedido por salón / grupo</option>
+                <option>Duda sobre el producto</option>
+                <option>Reposición de consumibles</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
+          </div>
+          <button type="submit" class="btn pink" style="width:100%; justify-content:center; border:none;">Enviar mensaje</button>
+          <p class="form-note">Al enviar, se abrirá tu aplicación de correo con este mensaje dirigido a hola@planb.com. También podés escribirnos directo si preferís.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="info-card">
+          <h3>Información de contacto</h3>
+          <div class="info-row">
+            <div class="ic">✉️</div>
+            <div><strong>Correo</strong><span><a href="mailto:hola@planb.com">hola@planb.com</a></span></div>
+          </div>
+          <div class="info-row">
+            <div class="ic">📞</div>
+            <div><strong>Teléfono / WhatsApp</strong><span><a href="tel:+50300000000">+503 0000 0000</a></span></div>
+          </div>
+          <div class="info-row">
+            <div class="ic">📍</div>
+            <div><strong>Zona de entrega</strong><span>Zaragoza, La Libertad y área metropolitana de San Salvador</span></div>
+          </div>
+          <div class="info-row">
+            <div class="ic">📷</div>
+            <div><strong>Instagram</strong><span><a href="#">@planb.sv</a></span></div>
+          </div>
+        </div>
+
+        <div class="hours-card">
+          <h3>Horario de atención</h3>
+          <div class="hours-row"><span>Lunes a viernes</span><span>7:00 am – 5:00 pm</span></div>
+          <div class="hours-row"><span>Sábados</span><span>8:00 am – 12:00 md</span></div>
+          <div class="hours-row"><span>Domingos</span><span>Cerrado</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>¿Preferís resolverlo más rápido?</h2>
+    <p>Revisá nuestras preguntas frecuentes, tal vez ya está respondida ahí.</p>
+    <a href="faq.html" class="btn">Ver preguntas frecuentes</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">Plan B <span class="star">★</span></div>
+        <p>Kits de higiene express para estudiantes de colegio. Porque un mal día no debería arruinarte la jornada.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explorar</h4>
+        <ul>
+          <li><a href="product.html">Producto</a></li>
+          <li><a href="about.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog y recursos</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="testimonials.html">Testimonios</a></li>
+          <li><a href="comparison.html">Comparativa</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:hola@planb.com">hola@planb.com</a></li>
+          <li><a href="tel:+50300000000">+503 0000 0000</a></li>
+          <li><a href="#">Instagram @planb.sv</a></li>
+          <li><a href="legal.html">Privacidad y términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Plan B. Todos los derechos reservados.</span>
+      <span>El Salvador</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
